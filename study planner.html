@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Study Planner</title>
+    <link rel="stylesheet" href="study planner.css">
+</head>
+<body>
+
+    <div class="container">
+        <section id="name-section" class="card">
+            <h2>Welcome to Study Planner</h2>
+            <p>Please enter your name to get started.</p>
+            <div class="input-group">
+                <input type="text" id="username-input" placeholder="Enter your full name...">
+                <button id="save-name-btn" class="btn btn-primary">Continue</button>
+            </div>
+            <p id="name-error" class="error-msg"></p>
+        </section>
+
+        <div id="main-dashboard" class="hidden">
+            
+            <header class="dashboard-header card">
+                <div>
+                    <h1 id="welcome-message">Welcome!</h1>
+                    <p class="subtitle">Manage your study goals effectively</p>
+                </div>
+                <div class="header-controls">
+                    <button id="toggle-reading-btn" class="btn btn-secondary">Toggle Reading Mode</button>
+                    <span id="paragraph-count-badge" class="badge">Paragraphs: 0</span>
+                </div>
+            </header>
+
+            <nav class="tabs-nav">
+                <button class="tab-btn active" data-tab="tasks-tab">My Tasks</button>
+                <button class="tab-btn" data-tab="tips-tab">Study Tips</button>
+                <button class="tab-btn" data-tab="about-tab">About Planner</button>
+            </nav>
+
+            <section id="tasks-tab" class="tab-content active">
+                <div class="card">
+                    <h3 id="form-title">Add New Task</h3>
+                    <form id="task-form">
+                        <input type="hidden" id="edit-task-id">
+                        <div class="form-group">
+                            <label for="task-title">Task Title</label>
+                            <input type="text" id="task-title" placeholder="e.g., Complete Math Assignment 3">
+                        </div>
+                        <div class="form-group">
+                            <label for="task-subject">Subject</label>
+                            <input type="text" id="task-subject" placeholder="e.g., Mathematics">
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" id="save-task-btn" class="btn btn-primary">Add Task</button>
+                            <button type="button" id="cancel-edit-btn" class="btn btn-secondary hidden">Cancel</button>
+                        </div>
+                        <p id="task-error" class="error-msg"></p>
+                    </form>
+                </div>
+
+                <div class="card margin-top">
+                    <div class="filter-container">
+                        <h3>Your Tasks</h3>
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="pending">Pending</button>
+                            <button class="filter-btn" data-filter="completed">Completed</button>
+                        </div>
+                    </div>
+
+                    <ul id="task-list" class="task-list"></ul>
+                    <p id="no-tasks-msg" class="empty-msg hidden">No tasks available.</p>
+                </div>
+            </section>
+
+            <section id="tips-tab" class="tab-content card">
+                <h2>Effective Study Techniques</h2>
+
+                <p>The Pomodoro Technique is a time management method where you break study time into 25-minute concentrated intervals separated by short breaks. This prevents mental fatigue and maintains deep focus.</p>
+                <br>
+                <p>Active Recall involves testing yourself on material rather than passively re-reading it. Try explaining a complex topic in your own words or completing flashcards to solidify your memory retention.</p>
+                <br>
+                <p>Spaced Repetition helps transfer knowledge into long-term memory. Review your study materials at expanding time intervals—such as 1 day later, 3 days later, and then a week later.</p>
+                <br>
+            </section>
+
+            <section id="about-tab" class="tab-content card">
+                <h2>About This Application</h2>
+
+                <p>This Study Planner is designed to help university students organize their assignments, exam schedules, and daily study objectives with minimal distraction.</p>
+                <br>
+                <p>All data created within this tool is safely stored inside your web browser using local storage, ensuring that your tasks persist even after you refresh or close the browser window.</p>
+                <br>
+                <p>Use the Reading Mode toggle at the top of the application whenever you wish to highlight and focus entirely on reading informative content across different sections.</p>
+
+            </section>
+
+        </div>
+    </div>
+
+    <script src="study planner.js"></script>
+</body>
+</html>
